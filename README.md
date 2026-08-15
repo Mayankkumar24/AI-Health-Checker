@@ -2,9 +2,9 @@
 
 A voice-based AI health screening agent that conducts a real-time medical intake conversation with users. The agent greets the user, collects their name, main health concern, duration, severity, and related symptoms — then generates a structured screening report. It supports English, Hindi, and natural Hinglish (code-mixed) conversations.
 
-**Live Demo:** [https://health-screening-agent.vercel.app](https://health-screening-agent.vercel.app)
+**Live Demo:** [https://ai-health-checker-two.vercel.app](https://ai-health-checker-two.vercel.app)
 
-**GitHub Repo:** [https://github.com/your-username/health-screening-agent](https://github.com/your-username/health-screening-agent)
+**GitHub Repo:** [https://github.com/Mayankkumar24/AI-Health-Checker](https://github.com/Mayankkumar24/AI-Health-Checker)
 
 > ⚠️ **Note:** After you speak and send your message, the agent may take **5–40 seconds** to respond. This is expected — the audio goes through speech-to-text transcription, then the LLM generates a reply, then text-to-speech synthesis runs before you hear anything. Please wait after sending each message.
 
@@ -106,8 +106,8 @@ A voice-based AI health screening agent that conducts a real-time medical intake
 
 | Service | Platform | URL |
 |---------|----------|-----|
-| Frontend (React) | Vercel | https://health-screening-agent.vercel.app |
-| Backend (Node.js + WebSocket) | Render | https://health-screening-agent-server.onrender.com |
+| Frontend (React) | Vercel | https://ai-health-checker-two.vercel.app |
+| Backend (Node.js + WebSocket) | Render | https://ai-health-checker-0vfa.onrender.com |
 
 ---
 
@@ -157,22 +157,39 @@ VITE_WS_URL=ws://localhost:8080
 
 ---
 
-### Step 1 — Clone the repository
+### Step 1 — Create a new folder and clone the repository
+
+First, create a new empty folder where you want to set up the project, then open Command Prompt in that folder.
+
+**Option A — Using File Explorer:**
+1. Go to any location (e.g. `C:\Projects`)
+2. Right-click → **New → Folder** → name it `AI-Health-Checker`
+3. Open the folder, then right-click inside it and select **Open in Terminal** or **Open Command Prompt here**
+
+**Option B — Using Command Prompt directly:**
 
 ```cmd
-git clone https://github.com/your-username/health-screening-agent.git
+mkdir C:\Projects\AI-Health-Checker
 ```
 
 ```cmd
-cd health-screening-agent
+cd C:\Projects\AI-Health-Checker
 ```
+
+Now clone the repository into this folder:
+
+```cmd
+git clone https://github.com/Mayankkumar24/AI-Health-Checker.git .
+```
+
+> The `.` at the end clones directly into the current folder instead of creating a subfolder.
 
 ---
 
 ### Step 2 — Set up the server
 
 ```cmd
-cd server
+cd C:\Projects\AI-Health-Checker\server
 ```
 
 Install dependencies:
@@ -215,7 +232,7 @@ You should see:
 Navigate back to the root and into the client folder:
 
 ```cmd
-cd path\to\health-screening-agent\client
+cd C:\Projects\AI-Health-Checker\client
 ```
 
 Install dependencies:
