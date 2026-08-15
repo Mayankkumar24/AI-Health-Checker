@@ -232,7 +232,6 @@ You should see:
 Navigate back to the root and into the client folder:
 
 ```cmd
-cd ..
 cd client
 ```
 
