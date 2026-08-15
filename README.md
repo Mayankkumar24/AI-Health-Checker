@@ -189,7 +189,7 @@ git clone https://github.com/Mayankkumar24/AI-Health-Checker.git .
 ### Step 2 — Set up the server
 
 ```cmd
-cd C:\Projects\AI-Health-Checker\server
+cd server
 ```
 
 Install dependencies:
@@ -201,7 +201,7 @@ npm install
 Create the environment file by copying the example:
 
 ```cmd
-copy .env.example .env
+Create a .env flie in root of "server" folder
 ```
 
 Open `server/.env` in any text editor and fill in your keys:
@@ -232,7 +232,8 @@ You should see:
 Navigate back to the root and into the client folder:
 
 ```cmd
-cd C:\Projects\AI-Health-Checker\client
+cd ..
+cd client
 ```
 
 Install dependencies:
@@ -244,7 +245,7 @@ npm install
 Create the environment file:
 
 ```cmd
-copy .env.example .env
+create a .env file in the root of client folder.
 ```
 
 Open `client/.env` and set:
