@@ -2,8 +2,6 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-// NOTE: check https://ai.google.dev for the current recommended flash model
-// name if this one has been deprecated by the time you're running this.
 const MODEL_NAME = process.env.GEMINI_MODEL || 'gemini-2.0-flash-lite';
 
 const TURN_SCHEMA = {
@@ -50,19 +48,6 @@ Once you have name, main concern, duration, and severity (related symptoms
 are a bonus, not required), thank the caller, tell them the screening is
 complete, and set screeningComplete to true.`;
 
-/**
- * Given the current structured state and the caller's latest utterance
- * (null on the very first turn), asks Gemini for the next thing to say and
- * any state fields it can now fill in.
- *
- * `state.language` (a Sarvam-style code like 'hi-IN' or 'en-IN', updated
- * each turn from what Saaras v3 detected) is passed as context so Gemini
- * knows which language it's currently speaking - but the system prompt is
- * what actually drives it to match the caller's language, not this field.
- *
- * Returns null on failure so the caller can show a recovery message instead
- * of crashing the call.
- */
 export async function getNextAgentTurn(state, userUtterance) {
   try {
     const model = genAI.getGenerativeModel({
