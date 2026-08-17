@@ -59,8 +59,7 @@ export function useCallSocket() {
     [speakBrowser]
   );
 
-  // Replaces the "(processing...)" placeholder with the actual transcribed
-  // text once the server tells us what it heard, then appends the agent's reply.
+
   const appendTurn = useCallback((userText, agentText, role = 'agent') => {
     setTranscript((prev) => {
       const next = [...prev];
@@ -138,8 +137,7 @@ export function useCallSocket() {
 
   const sendUserAudio = useCallback((base64Audio) => {
     if (wsRef.current?.readyState === WebSocket.OPEN) {
-      // Replace the "(listening...)" placeholder with "(processing...)" while
-      // the server transcribes and responds.
+    
       setTranscript((prev) => {
         const next = [...prev];
         const idx = [...next].reverse().findIndex(
@@ -155,8 +153,7 @@ export function useCallSocket() {
     }
   }, []);
 
-  // Called as soon as the user starts recording so the transcript immediately
-  // shows "(listening...)" rather than waiting until they stop and send.
+ 
   const markListening = useCallback(() => {
     setTranscript((prev) => [...prev, { role: 'user', text: '(listening...)' }]);
   }, []);
