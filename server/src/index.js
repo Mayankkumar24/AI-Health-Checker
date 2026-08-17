@@ -5,8 +5,6 @@ import { handleConnection } from './ws/callHandler.js';
 
 const PORT = process.env.PORT || 8080;
 
-// Plain HTTP server, mostly here so we have a /health endpoint and something
-// for the WebSocket server to attach to.
 const server = http.createServer((req, res) => {
   if (req.url === '/health') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
